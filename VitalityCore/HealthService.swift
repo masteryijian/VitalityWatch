@@ -97,6 +97,7 @@ public final class HealthService {
         var s = HealthSnapshot()
         let now = Date()
         let last24h = now.addingTimeInterval(-24 * 3600)
+        let todayStart = Calendar.current.startOfDay(for: now)
         guard let start14d = Calendar.current.date(byAdding: .day, value: -14, to: now) else { return s }
 
         s.heartRate = await latestQuantity(.heartRate, unit: Self.bpm, since: 1)
@@ -109,9 +110,10 @@ public final class HealthService {
         s.temperatureBaseline = await averageQuantity(.appleSleepingWristTemperature, unit: .degreeCelsius(), start: start14d, end: now)
         s.respiratoryRate = await averageQuantity(.respiratoryRate, unit: Self.bpm, start: last24h, end: now)
         s.respiratoryBaseline = await averageQuantity(.respiratoryRate, unit: Self.bpm, start: start14d, end: now)
-        s.steps = await sumQuantity(.stepCount, unit: .count(), start: last24h, end: now)
-        s.activeEnergy = await sumQuantity(.activeEnergyBurned, unit: .kilocalorie(), start: last24h, end: now)
-        s.distanceMeters = await sumQuantity(.distanceWalkingRunning, unit: .meter(), start: last24h, end: now)
+        // 步数/距离/活动能量按“今天 00:00 起”统计，避免把昨天同时段的量算进来
+        s.steps = await sumQuantity(.stepCount, unit: .count(), start: todayStart, end: now)
+        s.activeEnergy = await sumQuantity(.activeEnergyBurned, unit: .kilocalorie(), start: todayStart, end: now)
+        s.distanceMeters = await sumQuantity(.distanceWalkingRunning, unit: .meter(), start: todayStart, end: now)
         s.vo2Max = await latestQuantity(.vo2Max, unit: Self.vo2Unit, since: 90)
         s.sleep = await sleepSummary(over: Self.lastNightInterval)
         s.systolic = await latestQuantity(.bloodPressureSystolic, unit: .millimeterOfMercury(), since: 30)

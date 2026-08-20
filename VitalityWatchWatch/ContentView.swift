@@ -47,14 +47,14 @@ struct ContentView: View {
 
                 SleepPage(sleep: model.snapshot.sleep)
 
-                MetricValuePage(
-                    icon: "figure.walk",
-                    title: "步数",
-                    value: Fmt.count(model.snapshot.steps),
-                    unit: "步",
-                    footnote: energyFootnote,
-                    color: .green
-                )
+            MetricValuePage(
+                icon: "figure.walk",
+                title: "今日步数",
+                value: Fmt.count(model.snapshot.steps),
+                unit: "步",
+                footnote: "今日活动能量 \(Fmt.kcal(model.snapshot.activeEnergy))",
+                color: .green
+            )
 
                 MetricValuePage(
                     icon: "hourglass",
@@ -139,11 +139,6 @@ struct ContentView: View {
     private var temperatureFootnote: String? {
         guard let baseline = model.snapshot.temperatureBaseline else { return nil }
         return "睡眠腕温基线 \(Fmt.celsius(baseline))"
-    }
-
-    private var energyFootnote: String? {
-        guard let energy = model.snapshot.activeEnergy else { return nil }
-        return "活动能量 \(Fmt.kcal(energy))"
     }
 
     private var bioAgeValue: String {
