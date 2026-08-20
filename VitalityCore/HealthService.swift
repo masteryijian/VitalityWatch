@@ -177,6 +177,40 @@ public final class HealthService {
         }
     }
 
+    // MARK: - Live heart rate
+
+    private var liveHeartRateQuery: HKAnchoredObjectQuery?
+    private var liveAnchor: HKQueryAnchor?
+
+    public func startLiveHeartRate(handler: @escaping (Double, Date) -> Void) {
+        guard let type = HKQuantityType.quantityType(forIdentifier: .heartRate) else { return }
+        stopLiveHeartRate()
+
+        let resultsHandler: @Sendable (HKAnchoredObjectQuery, [HKSample]?, [HKDeletedObject]?, HKQueryAnchor?, Error?) -> Void = { [weak self] _, samples, _, newAnchor, _ in
+            self?.liveAnchor = newAnchor
+            guard let latest = (samples as? [HKQuantitySample])?.max(by: { $0.endDate < $1.endDate }) else { return }
+            handler(latest.quantity.doubleValue(for: Self.bpm), latest.endDate)
+        }
+
+        let query = HKAnchoredObjectQuery(
+            type: type,
+            predicate: nil,
+            anchor: liveAnchor,
+            limit: HKObjectQueryNoLimit,
+            resultsHandler: resultsHandler
+        )
+        query.updateHandler = resultsHandler
+        liveHeartRateQuery = query
+        store.execute(query)
+    }
+
+    public func stopLiveHeartRate() {
+        if let query = liveHeartRateQuery {
+            store.stop(query)
+        }
+        liveHeartRateQuery = nil
+    }
+
     // MARK: - Export
 
     public static func csv(from days: [DaySnapshot]) -> String {

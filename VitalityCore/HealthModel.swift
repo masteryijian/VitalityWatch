@@ -13,6 +13,8 @@ public final class HealthModel: ObservableObject {
     @Published public private(set) var errorMessage: String?
     @Published public private(set) var isAuthorized = false
     @Published public private(set) var authorization: HealthAuthorization = .notDetermined
+    @Published public private(set) var liveHeartRate: Double?
+    @Published public private(set) var liveHeartRateDate: Date?
 
     public let service = HealthService.shared
     public var chronologicalAge: Double = 30
@@ -56,5 +58,21 @@ public final class HealthModel: ObservableObject {
 
     public func clearError() {
         errorMessage = nil
+    }
+
+    public func startLiveHeartRate() {
+        service.startLiveHeartRate { [weak self] bpm, date in
+            Task { @MainActor in
+                self?.liveHeartRate = bpm
+                self?.liveHeartRateDate = date
+            }
+        }
+    }
+
+    public func refreshToday() async {
+        snapshot = await service.loadSnapshot()
+        readiness = Scores.readiness(snapshot: snapshot)
+        bioAge = Scores.biologicalAge(chronologicalAge: chronologicalAge, snapshot: snapshot)
+        insights = Insights.forToday(snapshot: snapshot)
     }
 }

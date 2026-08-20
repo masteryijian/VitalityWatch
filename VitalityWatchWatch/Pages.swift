@@ -26,14 +26,22 @@ struct MetricValuePage: View {
     let unit: String
     let footnote: String?
     let color: Color
+    var liveIndicator: Bool = false
 
     var body: some View {
         VStack(spacing: 4) {
             Image(systemName: icon)
                 .font(.system(size: 20))
                 .foregroundStyle(color)
-            Text(title)
-                .font(.headline)
+            HStack(spacing: 4) {
+                Text(title)
+                    .font(.headline)
+                if liveIndicator {
+                    Label("实时", systemImage: "waveform.path.ecg")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundStyle(.green)
+                }
+            }
             HStack(alignment: .firstTextBaseline, spacing: 3) {
                 Text(value)
                     .font(.system(size: 44, weight: .bold, design: .rounded))

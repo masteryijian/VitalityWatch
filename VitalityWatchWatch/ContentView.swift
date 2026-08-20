@@ -11,10 +11,11 @@ struct ContentView: View {
                 MetricValuePage(
                     icon: "heart",
                     title: "心率",
-                    value: Fmt.bpm(model.snapshot.heartRate),
+                    value: heartRateValue,
                     unit: "bpm",
-                    footnote: restingFootnote,
-                    color: .pink
+                    footnote: heartRateFootnote,
+                    color: .pink,
+                    liveIndicator: isHeartRateLive
                 )
 
                 MetricValuePage(
@@ -78,6 +79,11 @@ struct ContentView: View {
             } else {
                 await model.authorizeAndLoad()
             }
+            model.startLiveHeartRate()
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .seconds(60))
+                await model.refreshToday()
+            }
         }
         .overlay {
             if model.isLoading {
@@ -97,6 +103,32 @@ struct ContentView: View {
     private var restingFootnote: String? {
         guard let baseline = model.snapshot.restingHeartRateBaseline else { return nil }
         return "静息心率基线 \(Fmt.bpm(baseline)) bpm"
+    }
+
+    private var isHeartRateLive: Bool {
+        guard let date = model.liveHeartRateDate else { return false }
+        return Date().timeIntervalSince(date) < 120
+    }
+
+    private var heartRateValue: String {
+        if let live = model.liveHeartRate, isHeartRateLive {
+            return Fmt.bpm(live)
+        }
+        return Fmt.bpm(model.snapshot.heartRate)
+    }
+
+    private var heartRateFootnote: String? {
+        if isHeartRateLive {
+            var text = "实时更新"
+            if let baseline = model.snapshot.restingHeartRateBaseline {
+                text += " · 静息基线 \(Fmt.bpm(baseline))"
+            }
+            return text
+        }
+        if model.snapshot.heartRate == nil {
+            return "等待手表记录心率…"
+        }
+        return restingFootnote
     }
 
     private var hrvFootnote: String? {
