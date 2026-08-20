@@ -3,7 +3,8 @@ import Foundation
 public enum Fmt {
     public static func bpm(_ value: Double?) -> String { value.map { "\(Int($0.rounded()))" } ?? "–" }
     public static func hrv(_ value: Double?) -> String { value.map { String(format: "%.0f", $0) } ?? "–" }
-    public static func percent(_ value: Double?) -> String { value.map { String(format: "%.0f%%", $0) } ?? "–" }
+    // HealthKit 中血氧/体脂等 percent 类型的值是 0–1 的小数（0.97 = 97%），显示时乘 100。
+    public static func percent(_ value: Double?) -> String { value.map { String(format: "%.0f%%", $0 * 100) } ?? "–" }
     public static func celsius(_ value: Double?) -> String { value.map { String(format: "%.1f°C", $0) } ?? "–" }
     public static func count(_ value: Double?) -> String { value.map { "\(Int($0.rounded()))" } ?? "–" }
     public static func kcal(_ value: Double?) -> String { value.map { "\(Int($0.rounded())) kcal" } ?? "–" }

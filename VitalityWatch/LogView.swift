@@ -88,7 +88,8 @@ struct LogView: View {
                     try await model.service.writeQuantity(.bodyMass, value: weight, unit: HKUnit.gramUnit(with: .kilo))
                 }
                 if let fat = Double(bodyFatInput) {
-                    try await model.service.writeQuantity(.bodyFatPercentage, value: fat, unit: .percent())
+                    // HealthKit 的 percent 单位存 0–1 小数，把用户输入的 25 转成 0.25
+                    try await model.service.writeQuantity(.bodyFatPercentage, value: fat / 100, unit: .percent())
                 }
                 saveMessage = "已写入体重/体脂。"
                 weightInput = ""
