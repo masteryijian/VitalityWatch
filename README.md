@@ -60,7 +60,7 @@ VitalityWatch/
 ├── project.yml                # XcodeGen project definition
 ├── VitalityCore/              # Shared core: HealthKit read/write, scoring, insights, CSV export
 ├── VitalityWatch/             # iPhone companion: permissions, logging, export
-└── VitalityWatchWatch/        # watchOS app: Today, Sleep, Trends, Insights
+└── VitalityWatchWatch/        # watchOS app: one metric per page (recovery, HR, HRV, SpO₂, temp, sleep, steps, trends, insights)
 ```
 
 ## Requirements

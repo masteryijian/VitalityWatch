@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E22E5E71881AEB5D2BE03AB /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DD682B6A124107060379DE /* TodayView.swift */; };
 		1DCC52E0009035D45B1A2FD0 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125B7739855B8EB1AD76216 /* Formatters.swift */; };
 		35E9802A25FFBC6901E24329 /* VitalityWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4ECC79A7D424755A6315D /* VitalityWatchApp.swift */; };
 		3EBD306FD6308E06321EDFE1 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011914056F59C77631E8DE6D /* TodayView.swift */; };
@@ -22,11 +21,9 @@
 		6594C31DE772EF2A5BD15E91 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAA25A7D0BB7013EFCA297 /* Scores.swift */; };
 		6CCB79BE66867EBA2831A384 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5965A2F488DAACC918D4F8C4 /* HealthService.swift */; };
 		7181598E189CA44EE53AFDC3 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C5DB4CB47D8537FE61D6DD /* Insights.swift */; };
-		8829B8A6333136EF57B9D029 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26332B5BD0AEA1AAB0A9A83B /* InsightsView.swift */; };
+		731482BB2F4A433D656B1A8A /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AD3892C48CF6E20E4B194 /* Pages.swift */; };
 		AAC11354DF641C82966BD06B /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E46E6B985D3ED2FD4667BC /* LogView.swift */; };
 		BE91D6044D36CDDE170092A3 /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5D5CD3BDA2EDB580D5DD4 /* HealthModel.swift */; };
-		C47DE51D27B0FE864F6F9917 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAB35DEADA72515A11E997A /* TrendsView.swift */; };
-		CE1A3448534DC3A58999C4FE /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA09DA7B6759A3BBA7228223 /* SleepView.swift */; };
 		CFCB9A81B92997F81F7DF0DC /* VitalityWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B84050FC4641D513A790D8 /* VitalityWatchApp.swift */; };
 		D82D493EA7587D9D64418A0F /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5D5CD3BDA2EDB580D5DD4 /* HealthModel.swift */; };
 		E0A9D4DA90BF40E118DC0F16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884BC39570B6DD428297D8B5 /* ContentView.swift */; };
@@ -37,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		011914056F59C77631E8DE6D /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
-		26332B5BD0AEA1AAB0A9A83B /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		4DC02907E3CFBFDEB1A9B84F /* ScoreRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRing.swift; sourceTree = "<group>"; };
 		5965A2F488DAACC918D4F8C4 /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
 		71A5D5CD3BDA2EDB580D5DD4 /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
@@ -46,16 +42,14 @@
 		884BC39570B6DD428297D8B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		956F2D3901A4285BB0DF7D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C5DB4CB47D8537FE61D6DD /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
-		9AAB35DEADA72515A11E997A /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
 		9C2A2100911F4AE694AA7EC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B1E46E6B985D3ED2FD4667BC /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		B24DF23BDADDE63B13B1D770 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8A4ECC79A7D424755A6315D /* VitalityWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalityWatchApp.swift; sourceTree = "<group>"; };
 		C4834F0EE2A19788A026084D /* VitalityWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VitalityWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA09DA7B6759A3BBA7228223 /* SleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
 		DA693B2AE6F20CEAC1496A46 /* VitalityWatch.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VitalityWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17AD3892C48CF6E20E4B194 /* Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
 		E3429DC88CE3980CB78D891D /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
-		E9DD682B6A124107060379DE /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		F125B7739855B8EB1AD76216 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F8DAA25A7D0BB7013EFCA297 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,10 +82,7 @@
 			children = (
 				B24DF23BDADDE63B13B1D770 /* Assets.xcassets */,
 				9C2A2100911F4AE694AA7EC1 /* ContentView.swift */,
-				26332B5BD0AEA1AAB0A9A83B /* InsightsView.swift */,
-				CA09DA7B6759A3BBA7228223 /* SleepView.swift */,
-				E9DD682B6A124107060379DE /* TodayView.swift */,
-				9AAB35DEADA72515A11E997A /* TrendsView.swift */,
+				E17AD3892C48CF6E20E4B194 /* Pages.swift */,
 				B8A4ECC79A7D424755A6315D /* VitalityWatchApp.swift */,
 			);
 			path = VitalityWatchWatch;
@@ -247,12 +238,9 @@
 				BE91D6044D36CDDE170092A3 /* HealthModel.swift in Sources */,
 				EE0B62CBB29F0C00427064C8 /* HealthService.swift in Sources */,
 				4B767D2AEA694A4F63DAD15C /* Insights.swift in Sources */,
-				8829B8A6333136EF57B9D029 /* InsightsView.swift in Sources */,
 				442AC5A2AFA61BAC67481F9F /* Models.swift in Sources */,
+				731482BB2F4A433D656B1A8A /* Pages.swift in Sources */,
 				45B3CBD85C1B94517EF262B4 /* Scores.swift in Sources */,
-				CE1A3448534DC3A58999C4FE /* SleepView.swift in Sources */,
-				0E22E5E71881AEB5D2BE03AB /* TodayView.swift in Sources */,
-				C47DE51D27B0FE864F6F9917 /* TrendsView.swift in Sources */,
 				35E9802A25FFBC6901E24329 /* VitalityWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
