@@ -1,0 +1,69 @@
+name: VitalityWatch
+options:
+  bundleIdPrefix: com.yijian
+  deploymentTarget:
+    iOS: "17.0"
+    watchOS: "10.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: 1.0.0
+targets:
+  VitalityWatch:
+    type: application
+    platform: iOS
+    sources:
+      - path: VitalityWatch
+        excludes:
+          - "Info.plist"
+          - "*.entitlements"
+      - path: VitalityCore
+    entitlements:
+      path: VitalityWatch/VitalityWatch.entitlements
+      properties:
+        com.apple.developer.healthkit:
+          - true
+    info:
+      path: VitalityWatch/Info.plist
+      properties:
+        CFBundleDisplayName: Vitality
+        CFBundleName: Vitality
+        NSHealthShareUsageDescription: Vitality 读取心率、HRV、血氧、腕温、睡眠与活动数据，用于生成恢复分与长期趋势。
+        NSHealthUpdateUsageDescription: Vitality 允许你记录饮食能量与身体成分数据到健康 App。
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yijian.vitality
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+  VitalityWatch Watch App:
+    type: application
+    platform: watchOS
+    sources:
+      - path: VitalityWatchWatch
+        excludes:
+          - "Info.plist"
+          - "*.entitlements"
+      - path: VitalityCore
+    entitlements:
+      path: VitalityWatchWatch/VitalityWatchWatch.entitlements
+      properties:
+        com.apple.developer.healthkit:
+          - true
+    info:
+      path: VitalityWatchWatch/Info.plist
+      properties:
+        CFBundleDisplayName: Vitality
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: com.yijian.vitality
+        NSHealthShareUsageDescription: Vitality 读取心率、HRV、血氧、腕温、睡眠与活动数据，用于生成恢复分与长期趋势。
+        NSHealthUpdateUsageDescription: Vitality 允许你记录饮食能量与身体成分数据到健康 App。
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yijian.vitality.watchapp
+        GENERATE_INFOPLIST_FILE: NO

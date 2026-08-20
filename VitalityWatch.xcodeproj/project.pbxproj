@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E22E5E71881AEB5D2BE03AB /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DD682B6A124107060379DE /* TodayView.swift */; };
+		1DCC52E0009035D45B1A2FD0 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125B7739855B8EB1AD76216 /* Formatters.swift */; };
+		35E9802A25FFBC6901E24329 /* VitalityWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4ECC79A7D424755A6315D /* VitalityWatchApp.swift */; };
+		3EBD306FD6308E06321EDFE1 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011914056F59C77631E8DE6D /* TodayView.swift */; };
+		438083090E740F8A636C83CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24DF23BDADDE63B13B1D770 /* Assets.xcassets */; };
+		442AC5A2AFA61BAC67481F9F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E6085980AB33218171AB6 /* Models.swift */; };
+		45B3CBD85C1B94517EF262B4 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAA25A7D0BB7013EFCA297 /* Scores.swift */; };
+		4B767D2AEA694A4F63DAD15C /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C5DB4CB47D8537FE61D6DD /* Insights.swift */; };
+		545BA6A3D36BC43E90350003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2100911F4AE694AA7EC1 /* ContentView.swift */; };
+		5864B4338D0B25087B6D6A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956F2D3901A4285BB0DF7D59 /* Assets.xcassets */; };
+		58BFCF771AF4A3FEBA5B86CE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E6085980AB33218171AB6 /* Models.swift */; };
+		5D82DE5F4C0AC8C61EC84E47 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125B7739855B8EB1AD76216 /* Formatters.swift */; };
+		6594C31DE772EF2A5BD15E91 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DAA25A7D0BB7013EFCA297 /* Scores.swift */; };
+		6CCB79BE66867EBA2831A384 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5965A2F488DAACC918D4F8C4 /* HealthService.swift */; };
+		7181598E189CA44EE53AFDC3 /* Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C5DB4CB47D8537FE61D6DD /* Insights.swift */; };
+		8829B8A6333136EF57B9D029 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26332B5BD0AEA1AAB0A9A83B /* InsightsView.swift */; };
+		AAC11354DF641C82966BD06B /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E46E6B985D3ED2FD4667BC /* LogView.swift */; };
+		BE91D6044D36CDDE170092A3 /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5D5CD3BDA2EDB580D5DD4 /* HealthModel.swift */; };
+		C47DE51D27B0FE864F6F9917 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAB35DEADA72515A11E997A /* TrendsView.swift */; };
+		CE1A3448534DC3A58999C4FE /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA09DA7B6759A3BBA7228223 /* SleepView.swift */; };
+		CFCB9A81B92997F81F7DF0DC /* VitalityWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B84050FC4641D513A790D8 /* VitalityWatchApp.swift */; };
+		D82D493EA7587D9D64418A0F /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5D5CD3BDA2EDB580D5DD4 /* HealthModel.swift */; };
+		E0A9D4DA90BF40E118DC0F16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884BC39570B6DD428297D8B5 /* ContentView.swift */; };
+		E8D178749C8E4EE25C3F58DD /* ScoreRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC02907E3CFBFDEB1A9B84F /* ScoreRing.swift */; };
+		EE0B62CBB29F0C00427064C8 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5965A2F488DAACC918D4F8C4 /* HealthService.swift */; };
+		FF1D40F07B19762F9C102167 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3429DC88CE3980CB78D891D /* TrendsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		011914056F59C77631E8DE6D /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		26332B5BD0AEA1AAB0A9A83B /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		4DC02907E3CFBFDEB1A9B84F /* ScoreRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRing.swift; sourceTree = "<group>"; };
+		5965A2F488DAACC918D4F8C4 /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
+		71A5D5CD3BDA2EDB580D5DD4 /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
+		71B84050FC4641D513A790D8 /* VitalityWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalityWatchApp.swift; sourceTree = "<group>"; };
+		834E6085980AB33218171AB6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		884BC39570B6DD428297D8B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		956F2D3901A4285BB0DF7D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97C5DB4CB47D8537FE61D6DD /* Insights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insights.swift; sourceTree = "<group>"; };
+		9AAB35DEADA72515A11E997A /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		9C2A2100911F4AE694AA7EC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B1E46E6B985D3ED2FD4667BC /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		B24DF23BDADDE63B13B1D770 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8A4ECC79A7D424755A6315D /* VitalityWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalityWatchApp.swift; sourceTree = "<group>"; };
+		C4834F0EE2A19788A026084D /* VitalityWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VitalityWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA09DA7B6759A3BBA7228223 /* SleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
+		DA693B2AE6F20CEAC1496A46 /* VitalityWatch.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VitalityWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3429DC88CE3980CB78D891D /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		E9DD682B6A124107060379DE /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		F125B7739855B8EB1AD76216 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		F8DAA25A7D0BB7013EFCA297 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		15047D78690E6996018A22AE /* VitalityCore */ = {
+			isa = PBXGroup;
+			children = (
+				F125B7739855B8EB1AD76216 /* Formatters.swift */,
+				71A5D5CD3BDA2EDB580D5DD4 /* HealthModel.swift */,
+				5965A2F488DAACC918D4F8C4 /* HealthService.swift */,
+				97C5DB4CB47D8537FE61D6DD /* Insights.swift */,
+				834E6085980AB33218171AB6 /* Models.swift */,
+				F8DAA25A7D0BB7013EFCA297 /* Scores.swift */,
+			);
+			path = VitalityCore;
+			sourceTree = "<group>";
+		};
+		4AC0915C551A19746BC238FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4834F0EE2A19788A026084D /* VitalityWatch Watch App.app */,
+				DA693B2AE6F20CEAC1496A46 /* VitalityWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58F10EBB042CADCDE68AA428 /* VitalityWatchWatch */ = {
+			isa = PBXGroup;
+			children = (
+				B24DF23BDADDE63B13B1D770 /* Assets.xcassets */,
+				9C2A2100911F4AE694AA7EC1 /* ContentView.swift */,
+				26332B5BD0AEA1AAB0A9A83B /* InsightsView.swift */,
+				CA09DA7B6759A3BBA7228223 /* SleepView.swift */,
+				E9DD682B6A124107060379DE /* TodayView.swift */,
+				9AAB35DEADA72515A11E997A /* TrendsView.swift */,
+				B8A4ECC79A7D424755A6315D /* VitalityWatchApp.swift */,
+			);
+			path = VitalityWatchWatch;
+			sourceTree = "<group>";
+		};
+		C44A9AFFF95BCC21E03421A8 = {
+			isa = PBXGroup;
+			children = (
+				15047D78690E6996018A22AE /* VitalityCore */,
+				F8AAE74034F8BFF30116EDEF /* VitalityWatch */,
+				58F10EBB042CADCDE68AA428 /* VitalityWatchWatch */,
+				4AC0915C551A19746BC238FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8AAE74034F8BFF30116EDEF /* VitalityWatch */ = {
+			isa = PBXGroup;
+			children = (
+				956F2D3901A4285BB0DF7D59 /* Assets.xcassets */,
+				884BC39570B6DD428297D8B5 /* ContentView.swift */,
+				B1E46E6B985D3ED2FD4667BC /* LogView.swift */,
+				4DC02907E3CFBFDEB1A9B84F /* ScoreRing.swift */,
+				011914056F59C77631E8DE6D /* TodayView.swift */,
+				E3429DC88CE3980CB78D891D /* TrendsView.swift */,
+				71B84050FC4641D513A790D8 /* VitalityWatchApp.swift */,
+			);
+			path = VitalityWatch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EB4D36418CC1F64D23D7065 /* VitalityWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 156738E5353663E129387CD2 /* Build configuration list for PBXNativeTarget "VitalityWatch" */;
+			buildPhases = (
+				71963409800E681B42A9DDB9 /* Sources */,
+				EBD3D1845CCEBF9656612FD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VitalityWatch;
+			packageProductDependencies = (
+			);
+			productName = VitalityWatch;
+			productReference = DA693B2AE6F20CEAC1496A46 /* VitalityWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFEADE5AA330B06A574E81AF /* VitalityWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64237AC6BAB329C667AA0DD9 /* Build configuration list for PBXNativeTarget "VitalityWatch Watch App" */;
+			buildPhases = (
+				940ED6F0091041FAF9FFD427 /* Sources */,
+				7F6026A6D1B4633A93AF0FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VitalityWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "VitalityWatch Watch App";
+			productReference = C4834F0EE2A19788A026084D /* VitalityWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DEDD64D6B596D2791CE500D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1EB4D36418CC1F64D23D7065 = {
+						ProvisioningStyle = Automatic;
+					};
+					FFEADE5AA330B06A574E81AF = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D23AB9346A1472EEF536410D /* Build configuration list for PBXProject "VitalityWatch" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C44A9AFFF95BCC21E03421A8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4AC0915C551A19746BC238FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EB4D36418CC1F64D23D7065 /* VitalityWatch */,
+				FFEADE5AA330B06A574E81AF /* VitalityWatch Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F6026A6D1B4633A93AF0FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438083090E740F8A636C83CB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD3D1845CCEBF9656612FD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5864B4338D0B25087B6D6A7A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71963409800E681B42A9DDB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0A9D4DA90BF40E118DC0F16 /* ContentView.swift in Sources */,
+				1DCC52E0009035D45B1A2FD0 /* Formatters.swift in Sources */,
+				D82D493EA7587D9D64418A0F /* HealthModel.swift in Sources */,
+				6CCB79BE66867EBA2831A384 /* HealthService.swift in Sources */,
+				7181598E189CA44EE53AFDC3 /* Insights.swift in Sources */,
+				AAC11354DF641C82966BD06B /* LogView.swift in Sources */,
+				58BFCF771AF4A3FEBA5B86CE /* Models.swift in Sources */,
+				E8D178749C8E4EE25C3F58DD /* ScoreRing.swift in Sources */,
+				6594C31DE772EF2A5BD15E91 /* Scores.swift in Sources */,
+				3EBD306FD6308E06321EDFE1 /* TodayView.swift in Sources */,
+				FF1D40F07B19762F9C102167 /* TrendsView.swift in Sources */,
+				CFCB9A81B92997F81F7DF0DC /* VitalityWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		940ED6F0091041FAF9FFD427 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545BA6A3D36BC43E90350003 /* ContentView.swift in Sources */,
+				5D82DE5F4C0AC8C61EC84E47 /* Formatters.swift in Sources */,
+				BE91D6044D36CDDE170092A3 /* HealthModel.swift in Sources */,
+				EE0B62CBB29F0C00427064C8 /* HealthService.swift in Sources */,
+				4B767D2AEA694A4F63DAD15C /* Insights.swift in Sources */,
+				8829B8A6333136EF57B9D029 /* InsightsView.swift in Sources */,
+				442AC5A2AFA61BAC67481F9F /* Models.swift in Sources */,
+				45B3CBD85C1B94517EF262B4 /* Scores.swift in Sources */,
+				CE1A3448534DC3A58999C4FE /* SleepView.swift in Sources */,
+				0E22E5E71881AEB5D2BE03AB /* TodayView.swift in Sources */,
+				C47DE51D27B0FE864F6F9917 /* TrendsView.swift in Sources */,
+				35E9802A25FFBC6901E24329 /* VitalityWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2072CFCB21021CDA7045930D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VitalityWatchWatch/VitalityWatchWatch.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VitalityWatchWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yijian.vitality.watchapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		36AA3261E63AEE08AD79F9F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VitalityWatch/VitalityWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VitalityWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yijian.vitality;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		37E2AAF6BD5694FBBBB2A753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		3FDCD9155B8F9409D76503FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VitalityWatch/VitalityWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VitalityWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yijian.vitality;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B5BA78C9C8681B8B9364FEE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VitalityWatchWatch/VitalityWatchWatch.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VitalityWatchWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yijian.vitality.watchapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		D64ED0321315D31245D34AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		156738E5353663E129387CD2 /* Build configuration list for PBXNativeTarget "VitalityWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FDCD9155B8F9409D76503FD /* Debug */,
+				36AA3261E63AEE08AD79F9F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		64237AC6BAB329C667AA0DD9 /* Build configuration list for PBXNativeTarget "VitalityWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2072CFCB21021CDA7045930D /* Debug */,
+				B5BA78C9C8681B8B9364FEE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D23AB9346A1472EEF536410D /* Build configuration list for PBXProject "VitalityWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37E2AAF6BD5694FBBBB2A753 /* Debug */,
+				D64ED0321315D31245D34AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DEDD64D6B596D2791CE500D /* Project object */;
+}
