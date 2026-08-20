@@ -238,7 +238,7 @@ struct WatchScoreRing: View {
 // MARK: - 无数据时的引导页
 
 struct NoDataPage: View {
-    let isAuthorized: Bool
+    let authorization: HealthAuthorization
 
     var body: some View {
         ScrollView {
@@ -246,11 +246,19 @@ struct NoDataPage: View {
                 Text("还没有健康数据")
                     .font(.headline)
 
-                if !isAuthorized {
-                    Label("健康权限未授权", systemImage: "lock.fill")
-                        .font(.caption)
-                        .foregroundStyle(.orange)
-                    Text("首次打开 App 时，手表会弹出「允许 Vitality 访问健康数据」的提示，请点「允许」。若之前误点了拒绝，需要删除本 App 后重新安装，再打开一次。")
+                authStatusRow
+
+                switch authorization {
+                case .notDetermined:
+                    Text("首次打开 App 时，手表会弹出「允许 Vitality 访问健康数据」的提示，请点「允许」。如果一直没有弹出，说明安装的可能是旧版本或签名不完整，请在 Xcode 中重新运行安装。")
+                        .font(.system(size: 11))
+                        .foregroundStyle(.secondary)
+                case .denied:
+                    Text("健康权限被拒绝。请删除本 App 后重新安装，再打开一次并点「允许」。")
+                        .font(.system(size: 11))
+                        .foregroundStyle(.secondary)
+                case .authorized:
+                    Text("健康权限已授权，但还没有读到数据。请确认 iPhone 的「健康」App 有心率记录，且手表佩戴正常。")
                         .font(.system(size: 11))
                         .foregroundStyle(.secondary)
                 }
@@ -267,6 +275,41 @@ struct NoDataPage: View {
             }
             .padding(.horizontal, 6)
             .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    private var authStatusRow: some View {
+        HStack(spacing: 4) {
+            Image(systemName: authIcon)
+                .font(.system(size: 11))
+                .foregroundStyle(authColor)
+            Text("健康权限：\(authText)")
+                .font(.system(size: 11))
+                .foregroundStyle(authColor)
+        }
+    }
+
+    private var authText: String {
+        switch authorization {
+        case .notDetermined: return "未请求"
+        case .denied: return "已拒绝"
+        case .authorized: return "已授权"
+        }
+    }
+
+    private var authIcon: String {
+        switch authorization {
+        case .notDetermined: return "questionmark.circle"
+        case .denied: return "lock.fill"
+        case .authorized: return "checkmark.circle.fill"
+        }
+    }
+
+    private var authColor: Color {
+        switch authorization {
+        case .notDetermined: return .orange
+        case .denied: return .red
+        case .authorized: return .green
         }
     }
 

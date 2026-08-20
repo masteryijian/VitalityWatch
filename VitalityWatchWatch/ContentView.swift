@@ -68,10 +68,10 @@ struct ContentView: View {
                 TrendPage(title: "静息心率趋势", color: .pink, points: restingHRPoints)
                 InsightsPage(insights: model.insights)
             } else {
-                NoDataPage(isAuthorized: model.isAuthorized)
+                NoDataPage(authorization: model.authorization)
             }
         }
-        .tabViewStyle(.page)
+        .tabViewStyle(.verticalPage)
         .task {
             if model.service.hasRequestedAuthorization() {
                 await model.load()

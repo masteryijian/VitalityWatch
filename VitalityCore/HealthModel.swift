@@ -12,11 +12,14 @@ public final class HealthModel: ObservableObject {
     @Published public private(set) var isLoading = false
     @Published public private(set) var errorMessage: String?
     @Published public private(set) var isAuthorized = false
+    @Published public private(set) var authorization: HealthAuthorization = .notDetermined
 
     public let service = HealthService.shared
     public var chronologicalAge: Double = 30
 
-    public init() {}
+    public init() {
+        authorization = service.authorization
+    }
 
     public func authorizeAndLoad() async {
         isLoading = true
@@ -24,8 +27,10 @@ public final class HealthModel: ObservableObject {
         do {
             try await service.requestAuthorization()
             isAuthorized = true
+            authorization = service.authorization
             await load()
         } catch {
+            authorization = service.authorization
             errorMessage = error.localizedDescription
         }
     }
@@ -34,6 +39,7 @@ public final class HealthModel: ObservableObject {
         isLoading = true
         defer { isLoading = false }
 
+        authorization = service.authorization
         snapshot = await service.loadSnapshot()
         days = await service.dailySnapshots(days: 14)
 

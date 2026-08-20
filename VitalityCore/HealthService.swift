@@ -17,6 +17,12 @@ public enum HealthError: LocalizedError {
     }
 }
 
+public enum HealthAuthorization: Equatable {
+    case notDetermined
+    case denied
+    case authorized
+}
+
 public final class HealthService {
     public static let shared = HealthService()
 
@@ -74,6 +80,15 @@ public final class HealthService {
     public func hasRequestedAuthorization() -> Bool {
         guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return false }
         return store.authorizationStatus(for: heartRateType) != .notDetermined
+    }
+
+    public var authorization: HealthAuthorization {
+        guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return .notDetermined }
+        switch store.authorizationStatus(for: heartRateType) {
+        case .sharingAuthorized: return .authorized
+        case .sharingDenied: return .denied
+        default: return .notDetermined
+        }
     }
 
     // MARK: - Snapshot
