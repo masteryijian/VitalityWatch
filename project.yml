@@ -9,6 +9,7 @@ settings:
   base:
     SWIFT_VERSION: "5.0"
     CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: 5XX3ZWG6P5
     CURRENT_PROJECT_VERSION: 1
     MARKETING_VERSION: 1.0.0
 targets:
@@ -25,6 +26,9 @@ targets:
       path: VitalityWatch/VitalityWatch.entitlements
       properties:
         com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access:
+          - health-records
+        com.apple.developer.healthkit.background-delivery: true
     info:
       path: VitalityWatch/Info.plist
       properties:
@@ -53,6 +57,9 @@ targets:
       path: VitalityWatchWatch/VitalityWatchWatch.entitlements
       properties:
         com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access:
+          - health-records
+        com.apple.developer.healthkit.background-delivery: true
     info:
       path: VitalityWatchWatch/Info.plist
       properties:
@@ -65,3 +72,16 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.yijian.vitality.watchapp
         GENERATE_INFOPLIST_FILE: NO
+schemes:
+  VitalityWatch:
+    build:
+      targets:
+        VitalityWatch: all
+    run:
+      config: Debug
+  VitalityWatch Watch App:
+    build:
+      targets:
+        VitalityWatch Watch App: all
+    run:
+      config: Debug
