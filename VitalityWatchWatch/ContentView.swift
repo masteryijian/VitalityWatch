@@ -5,67 +5,71 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            RecoveryPage(score: model.readiness ?? 0)
+            if model.snapshot.hasData || model.isLoading {
+                RecoveryPage(score: model.readiness ?? 0)
 
-            MetricValuePage(
-                icon: "heart",
-                title: "心率",
-                value: Fmt.bpm(model.snapshot.heartRate),
-                unit: "bpm",
-                footnote: restingFootnote,
-                color: .pink
-            )
+                MetricValuePage(
+                    icon: "heart",
+                    title: "心率",
+                    value: Fmt.bpm(model.snapshot.heartRate),
+                    unit: "bpm",
+                    footnote: restingFootnote,
+                    color: .pink
+                )
 
-            MetricValuePage(
-                icon: "waveform.path.ecg",
-                title: "HRV",
-                value: Fmt.hrv(model.snapshot.hrv),
-                unit: "ms",
-                footnote: hrvFootnote,
-                color: .mint
-            )
+                MetricValuePage(
+                    icon: "waveform.path.ecg",
+                    title: "HRV",
+                    value: Fmt.hrv(model.snapshot.hrv),
+                    unit: "ms",
+                    footnote: hrvFootnote,
+                    color: .mint
+                )
 
-            MetricValuePage(
-                icon: "drop",
-                title: "血氧",
-                value: Fmt.percent(model.snapshot.spo2),
-                unit: "SpO₂",
-                footnote: nil,
-                color: .cyan
-            )
+                MetricValuePage(
+                    icon: "drop",
+                    title: "血氧",
+                    value: Fmt.percent(model.snapshot.spo2),
+                    unit: "SpO₂",
+                    footnote: nil,
+                    color: .cyan
+                )
 
-            MetricValuePage(
-                icon: "thermometer",
-                title: "腕温",
-                value: Fmt.celsius(model.snapshot.wristTemperature),
-                unit: "",
-                footnote: temperatureFootnote,
-                color: .orange
-            )
+                MetricValuePage(
+                    icon: "thermometer",
+                    title: "腕温",
+                    value: Fmt.celsius(model.snapshot.wristTemperature),
+                    unit: "",
+                    footnote: "Series 8+ 才有腕温传感器\nSeries 7 此页无数据属正常",
+                    color: .orange
+                )
 
-            SleepPage(sleep: model.snapshot.sleep)
+                SleepPage(sleep: model.snapshot.sleep)
 
-            MetricValuePage(
-                icon: "figure.walk",
-                title: "步数",
-                value: Fmt.count(model.snapshot.steps),
-                unit: "步",
-                footnote: energyFootnote,
-                color: .green
-            )
+                MetricValuePage(
+                    icon: "figure.walk",
+                    title: "步数",
+                    value: Fmt.count(model.snapshot.steps),
+                    unit: "步",
+                    footnote: energyFootnote,
+                    color: .green
+                )
 
-            MetricValuePage(
-                icon: "hourglass",
-                title: "生物年龄",
-                value: bioAgeValue,
-                unit: "岁",
-                footnote: "估算值，非医学结论",
-                color: .purple
-            )
+                MetricValuePage(
+                    icon: "hourglass",
+                    title: "生物年龄",
+                    value: bioAgeValue,
+                    unit: "岁",
+                    footnote: "估算值，非医学结论",
+                    color: .purple
+                )
 
-            TrendPage(title: "HRV 趋势", color: .mint, points: hrvPoints)
-            TrendPage(title: "静息心率趋势", color: .pink, points: restingHRPoints)
-            InsightsPage(insights: model.insights)
+                TrendPage(title: "HRV 趋势", color: .mint, points: hrvPoints)
+                TrendPage(title: "静息心率趋势", color: .pink, points: restingHRPoints)
+                InsightsPage(insights: model.insights)
+            } else {
+                NoDataPage(isAuthorized: model.isAuthorized)
+            }
         }
         .tabViewStyle(.page)
         .task {
@@ -79,6 +83,14 @@ struct ContentView: View {
             if model.isLoading {
                 ProgressView()
             }
+        }
+        .alert("健康数据", isPresented: Binding(
+            get: { model.errorMessage != nil },
+            set: { if !$0 { model.clearError() } }
+        )) {
+            Button("好", role: .cancel) {}
+        } message: {
+            Text(model.errorMessage ?? "")
         }
     }
 

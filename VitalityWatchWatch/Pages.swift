@@ -234,3 +234,50 @@ struct WatchScoreRing: View {
         }
     }
 }
+
+// MARK: - 无数据时的引导页
+
+struct NoDataPage: View {
+    let isAuthorized: Bool
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("还没有健康数据")
+                    .font(.headline)
+
+                if !isAuthorized {
+                    Label("健康权限未授权", systemImage: "lock.fill")
+                        .font(.caption)
+                        .foregroundStyle(.orange)
+                    Text("首次打开 App 时，手表会弹出「允许 Vitality 访问健康数据」的提示，请点「允许」。若之前误点了拒绝，需要删除本 App 后重新安装，再打开一次。")
+                        .font(.system(size: 11))
+                        .foregroundStyle(.secondary)
+                }
+
+                Text("按顺序检查：")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
+                guideRow(number: "1", text: "允许健康权限（见上方提示）")
+                guideRow(number: "2", text: "佩戴手表，心率会自动记录到健康 App")
+                guideRow(number: "3", text: "打开 iPhone 的「健康」App → 浏览 → 心率，确认有心率数据")
+                guideRow(number: "4", text: "血氧需在手表的「血氧」App 主动测量过才有数据")
+                guideRow(number: "5", text: "Series 7 无腕温传感器，腕温页永远显示 –，属正常")
+            }
+            .padding(.horizontal, 6)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    private func guideRow(number: String, text: String) -> some View {
+        HStack(alignment: .top, spacing: 5) {
+            Text(number)
+                .font(.system(size: 11, weight: .bold))
+                .foregroundStyle(.tint)
+            Text(text)
+                .font(.system(size: 11))
+                .foregroundStyle(.secondary)
+        }
+    }
+}
