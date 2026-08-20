@@ -24,8 +24,7 @@ targets:
     entitlements:
       path: VitalityWatch/VitalityWatch.entitlements
       properties:
-        com.apple.developer.healthkit:
-          - true
+        com.apple.developer.healthkit: true
     info:
       path: VitalityWatch/Info.plist
       properties:
@@ -53,8 +52,7 @@ targets:
     entitlements:
       path: VitalityWatchWatch/VitalityWatchWatch.entitlements
       properties:
-        com.apple.developer.healthkit:
-          - true
+        com.apple.developer.healthkit: true
     info:
       path: VitalityWatchWatch/Info.plist
       properties:
